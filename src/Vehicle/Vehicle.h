@@ -836,6 +836,7 @@ private:
     void _handleScaledPressure3(mavlink_message_t& message);
     void _handleCameraFeedback(const mavlink_message_t& message);
     void _handleCameraImageCaptured(const mavlink_message_t& message);
+    void _handleJaviMsg(mavlink_message_t& message);
     void _missionManagerError(int errorCode, const QString& errorMsg);
     void _geoFenceManagerError(int errorCode, const QString& errorMsg);
     void _rallyPointManagerError(int errorCode, const QString& errorMsg);

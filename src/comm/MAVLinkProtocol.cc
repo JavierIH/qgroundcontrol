@@ -439,4 +439,3 @@ void MAVLinkProtocol::deleteTempLogFiles(void)
         QFile::remove(fileInfo.filePath());
     }
 }
-

@@ -588,7 +588,7 @@ void Vehicle::_mavlinkMessageReceived(LinkInterface* link, mavlink_message_t mes
         break;
     case MAVLINK_MSG_ID_SCALED_PRESSURE3:
         _handleScaledPressure3(message);
-        break;        
+        break;
     case MAVLINK_MSG_ID_CAMERA_FEEDBACK:
         _handleCameraFeedback(message);
         break;
@@ -608,6 +608,10 @@ void Vehicle::_mavlinkMessageReceived(LinkInterface* link, mavlink_message_t mes
 
     case MAVLINK_MSG_ID_WIND:
         _handleWind(message);
+        break;
+
+    case MAVLINK_MSG_ID_JAVI_MSG:
+        _handleJaviMsg(message);
         break;
     }
 
@@ -2726,4 +2730,10 @@ VehicleTemperatureFactGroup::VehicleTemperatureFactGroup(QObject* parent)
     _temperature1Fact.setRawValue      (std::numeric_limits<float>::quiet_NaN());
     _temperature2Fact.setRawValue      (std::numeric_limits<float>::quiet_NaN());
     _temperature3Fact.setRawValue      (std::numeric_limits<float>::quiet_NaN());
+}
+
+void Vehicle::_handleJaviMsg(mavlink_message_t& message) {
+    mavlink_javi_msg_t my_msg;
+    mavlink_msg_javi_msg_decode(&message, &my_msg);
+    qWarning() << "Recibido un JAVI_MSG con valor " << my_msg.data;
 }
