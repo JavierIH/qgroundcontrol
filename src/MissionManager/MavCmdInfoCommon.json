@@ -306,7 +306,7 @@
                 "units":            "secs",
                 "default":          0,
                 "decimalPlaces":    0
-            }        
+            }
         },
         { "id": 83, "rawName": "MAV_CMD_NAV_ALTITUDE_WAIT", "friendlyName": "Altitude wait" },
         {
@@ -1066,6 +1066,20 @@
             }
         },
         { "id": 30001, "rawName": "MAV_CMD_PAYLOAD_PREPARE_DEPLOY", "friendlyName": "Payload prepare deploy" },
-        { "id": 30002, "rawName": "MAV_CMD_PAYLOAD_CONTROL_DEPLOY", "friendlyName": "Payload control deploy" }
+        { "id": 30002, "rawName": "MAV_CMD_PAYLOAD_CONTROL_DEPLOY", "friendlyName": "Payload control deploy" },
+        { "id": 2800, "rawName": "MAV_CMD_PANORAMA_CREATE", "friendlyName": "Create panorama" },
+        {
+            "id": 1000,
+            "rawName":      "MAV_CMD_DO_READ_MAGNETOMETER",
+            "friendlyName": "Read magnetometer",
+            "description":  "Request a sample from the magnetometer",
+            "category":     "Advanced",
+            "param1": {
+                "label":            "Ajuste",
+                "default":          1,
+                "enumStrings":      "A1,A2",
+                "enumValues":       "0,1"
+            }
+        }
     ]
 }
